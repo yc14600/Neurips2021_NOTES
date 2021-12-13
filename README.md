@@ -36,7 +36,17 @@ Gram matrices [2], and energy-based [3]  out-of-distribution detection methods b
 ## Continual learning
 
 1. [Towards a robust experimental framework and benchmark for lifelong language learning](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/b3e3e393c77e35a4a3f3cbd1e429b5dc-Abstract-round1.html): provided a framework and multiple benchmarks for language learning in continual learning, including multi-domain, multilingual and different levels of linguistic hierarchy. [Code](https://github.com/AmanDaVinci/lifelong-learning) is available.
+2. [Formalizing the Generalization-Forgetting Trade-off in Continual Learning](https://openreview.net/forum?id=u1XV9BPAB9): formulates the continual learning problem via dynamic programming and model the trade-off between catastrophic forgetting and generalization as a two-player sequential game; the results look much better than ER on CIFAR100, but memory is 16000 samples that is much larger than those in related work. Not fully understand the formulation but the algorithm seems a meta-learning approach with a different cost function on outter loop; [code](https://github.com/krm9c/Balanced-Continual-Learning) is available, need to check how $x^{PN}$ is updated in the inner loop.
+3. [Class-Incremental Learning via Dual Augmentation](https://openreview.net/forum?id=8dqEeFuhgMG): introduces 2 augmentation procedures in CL, one is augmentation of classes for a new task by generating pseudo classes (mixing up real classes), the other is generating pseudo samples of old classes by statistical approximation of old classes (class mean and variance). It seems  multi-head that needs keeping linear layer of each task 
+, check [code](
+https://github.com/Impression2805/IL2A.).
 
+4. [Gradient-based Editing of Memory Examples for
+Online Task-free Continual Learning](https://openreview.net/forum?id=gL8btosnTj): GMED-edited examples remain similar to their unedited forms, but can yield increased loss in the upcoming model updates, thereby making the future replays more effective in overcoming
+catastrophic forgetting. [Code](https://github.com/INK-USC/GMED) is available.
+
+## Unsupervised & Semisupervised learning
+1. [Detecting Errors and Estimating Accuracy on Unlabeled Data with Self-training Ensembles](https://github.com/INK-USC/GMED)
 
 ## Representation learning
 
