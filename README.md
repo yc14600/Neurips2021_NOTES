@@ -25,6 +25,8 @@ Gram matrices [2], and energy-based [3]  out-of-distribution detection methods b
 
 6. [Amortized Variational Inference for Simple Hierarchical Models](https://openreview.net/forum?id=Rw_fo_Z2vV): proposed an amortized way to learn parameters of local variables in a hierarchical model without assumptions of conjugacy or mean-field in variational inference, it is similarly accurate as using a given joint distribution such as a full-rank Gaussian.
 
+7. [A nonparametric method for gradual change problems with statistical guarantees](https://openreview.net/forum?id=zwkj1_pxFM)
+
 [1] Kimin Lee, Kibok Lee, Honglak Lee, and Jinwoo Shin. A simple unified framework for detecting outof-distribution samples and adversarial attacks. In S. Bengio, H. Wallach, H. Larochelle, K. Grauman, N. Cesa-Bianchi, and R. Garnett, editors, Advances in Neural Information Processing Systems, volume 31. Curran Associates, Inc., 2018.
 
 [2] Chandramouli Shama Sastry and Sageev Oore. Detecting out-of-distribution examples with gram matrices. In 37th International Conference on Machine Learning, volume 1, pages 8491–8501, 2020.
@@ -45,8 +47,14 @@ https://github.com/Impression2805/IL2A.).
 Online Task-free Continual Learning](https://openreview.net/forum?id=gL8btosnTj): GMED-edited examples remain similar to their unedited forms, but can yield increased loss in the upcoming model updates, thereby making the future replays more effective in overcoming
 catastrophic forgetting. [Code](https://github.com/INK-USC/GMED) is available.
 
-## Unsupervised & Semisupervised learning
-1. [Detecting Errors and Estimating Accuracy on Unlabeled Data with Self-training Ensembles](https://github.com/INK-USC/GMED)
+## Unsupervised, semi-supervised, self-supvised learning
+1. [Detecting Errors and Estimating Accuracy on Unlabeled Data with Self-training Ensembles](https://github.com/INK-USC/GMED): using diverse ensembles to identify a mis-classified test point x (a large fraction of the models in the ensemble disagree
+with f on their predictions on x, f is a model trained by correctly labeled data). For each
+mis-classified data point x identified by the ensemble, assign it a pseudo-label that is different from f. Then train a new ensemble to encourage their disagreement with f on the pseudo-labeled data R, the new ensemble is trained to mostly disagree with f on R.
+[Code](https://github.com/jfc43/self-training-ensembles) is available.
+
+1. [Intermediate Layers Matter in Momentum Contrastive Self Supervised Learning](https://openreview.net/forum?id=M5j42PvY65V): in addition to the momentum contrastive loss (MoCo), this method minimizes the mean squared error between the intermediate layer
+representations or make their cross-correlation matrix closer to an identity matrix (Barlow Twins loss). The invariance term in BT loss tries to equate the diagonal entries of the correlation matrix to one, thereby making the representations invariant to augmentations. This could be useful for a distribution shift scenario. 
 
 ## Representation learning
 
